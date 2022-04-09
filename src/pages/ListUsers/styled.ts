@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 import {Contacts, FactCheck, LocationOn} from '@styled-icons/material'
 import { Whatsapp} from '@styled-icons/simple-icons'
-import {Email, Phone, Cake} from '@styled-icons/material-outlined'
+import {Email, Phone, Cake, Map,LocationCity} from '@styled-icons/material-outlined'
 import {User} from '@styled-icons/boxicons-regular'
-import {GenderFemale, GenderMale} from '@styled-icons/bootstrap'
+import {GenderFemale, GenderMale,Signpost} from '@styled-icons/bootstrap'
 
 export const Location = styled(LocationOn)`
   color: #0077C0;
@@ -49,6 +49,21 @@ export const GenderMaleIcon = styled(GenderMale)`
   margin-right: 10px;
 `
 export const CakeIcon = styled(Cake)`
+  color: #0077C0;
+  width: 20px;
+  margin-right: 10px;
+`
+export const MapIcon = styled(Map)`
+  color: #0077C0;
+  width: 20px;
+  margin-right: 10px;
+`
+export const LocationCityIcon = styled(LocationCity)`
+  color: #0077C0;
+  width: 20px;
+  margin-right: 10px;
+`
+export const SignpostIcon = styled(Signpost)`
   color: #0077C0;
   width: 20px;
   margin-right: 10px;

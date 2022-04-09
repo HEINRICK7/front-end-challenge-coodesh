@@ -25,7 +25,7 @@ const ListUsers: React.FC = () => {
 
   
   useEffect(()=> {
-    api.get('/?results=250').then((response: AxiosResponse) => {
+    api.get('/?results=5000').then((response: AxiosResponse) => {
         setPatients(response.data.results);
         setLoading(true)
         console.log(response.data.results);
@@ -249,23 +249,23 @@ const ListUsers: React.FC = () => {
                     <C.SubCard>
                       <C.Ul>
                         <C.Li>
-                          <Icon.WhatsappIcon/> 
+                          <Icon.MapIcon/> 
                           <C.Span>
-                            {response.cell}
+                            {response.location.country}
                           </C.Span>
                           
                         </C.Li>
                         <C.Li>
-                          <Icon.PhoneIcon/> 
+                          <Icon.LocationCityIcon/> 
                           <C.Span>
-                            {response.phone}
+                            {response.location.street.name}, {response.location.city}, {response.location.state}, {response.location.street.number}
                           </C.Span>
                           
                         </C.Li>
                         <C.Li>
-                          <Icon.EmailIcon/> 
+                          <Icon.SignpostIcon/> 
                           <C.Span>
-                            { response.email}
+                            { response.location.postcode}
                           </C.Span>
                           
                         </C.Li>
