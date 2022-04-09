@@ -12,6 +12,10 @@ import { Data } from '../../types/data'
 
 import * as C from './styled';
 
+import * as Icon from './styled'
+
+import moment from 'moment';
+
 const ListUsers: React.FC = () => {
 
   const [ patients, setPatients ] = useState<Users[]>([]);
@@ -27,15 +31,15 @@ const ListUsers: React.FC = () => {
         console.log(response.data.results);
     });
   },[])
-  
+  moment.locale('pt-br');
   const data = patients.map((res) => {
     return ({
       name: `${res.name.first} ${res.name.last}`,
       gender: res.gender,
-      age: res.dob.age,
+      birth: moment(res.dob.date).format("DD/MM/YYYY"),
       address: res.location.street.name,
       nationality: res.location.country,
-      uuid: res.login.uuid
+      uuid: res.login.uuid,
 
     })
    
@@ -67,11 +71,15 @@ const ListUsers: React.FC = () => {
       }
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      sorter: (a: any, b: any) => a.age - b.age,
+      filterSearch: true,
+      title: 'Birth',
+      dataIndex: 'birth',
+      onFilter:(value:string, record: Data) => {
+        return record.birth === value
+      }
     },
     {
+      
       title: 'Nationality',
       dataIndex: 'nationality',
       filters: patients.map(res => {
@@ -149,7 +157,7 @@ const ListUsers: React.FC = () => {
             </>
           )
         }
-        <Modal visible={isModalVisible} width={1000} footer={null} centered  onOk={handleOk} onCancel={handleCancel}>
+        <Modal visible={isModalVisible} width={1200} footer={null} centered  onOk={handleOk} onCancel={handleCancel}>
           {ModalDetails.map(response => {
             return (
                <C.ContainerModal>
@@ -166,9 +174,105 @@ const ListUsers: React.FC = () => {
                   />
                 </C.Img>  
                 <br />
-                <p>{response.name.first} {response.name.last}</p>  
-                <hr />  
-                <p>{response.email}</p>
+                <C.P>{response.name.title}: {response.name.first} {response.name.last}</C.P>   
+                <C.ContainerCards>
+                  <C.Card>
+                    <C.CardHeader>
+                      Contact
+                    </C.CardHeader>
+                    <Icon.Contact/>
+                    <C.SubCard>
+                      <C.Ul>
+                        <C.Li>
+                          <Icon.WhatsappIcon/> 
+                          <C.Span>
+                            {response.cell}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          <Icon.PhoneIcon/> 
+                          <C.Span>
+                            {response.phone}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          <Icon.EmailIcon/> 
+                          <C.Span>
+                            { response.email}
+                          </C.Span>
+                          
+                        </C.Li>
+                      </C.Ul>
+                    </C.SubCard>
+                  </C.Card>
+                  <C.Card>
+                  <C.CardHeader>
+                      Profile
+                  </C.CardHeader>
+                    <Icon.Fact/>
+                    <C.SubCard>
+                      <C.Ul>
+                        <C.Li>
+                          <Icon.UserIcon/> 
+                          <C.Span>
+                            {response.name.first} {response.name.last}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          {response.gender === 'female' ? (
+                             <Icon.GenderFemaleIcon/> 
+                          ): <Icon.GenderMaleIcon/>}
+                         
+                          <C.Span>
+                            {response.gender}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          <Icon.CakeIcon/> 
+                          <C.Span>
+                            { moment(response.dob.date).format("DD/MM/YYYY")}
+                          </C.Span>
+                          
+                        </C.Li>
+                      </C.Ul>
+                    </C.SubCard>
+                  </C.Card>
+                  <C.Card>
+                  <C.CardHeader>
+                      Localization
+                    </C.CardHeader>
+                    <Icon.Location/>
+                    <C.SubCard>
+                      <C.Ul>
+                        <C.Li>
+                          <Icon.WhatsappIcon/> 
+                          <C.Span>
+                            {response.cell}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          <Icon.PhoneIcon/> 
+                          <C.Span>
+                            {response.phone}
+                          </C.Span>
+                          
+                        </C.Li>
+                        <C.Li>
+                          <Icon.EmailIcon/> 
+                          <C.Span>
+                            { response.email}
+                          </C.Span>
+                          
+                        </C.Li>
+                      </C.Ul>
+                    </C.SubCard>
+                  </C.Card>
+                </C.ContainerCards>
                </C.ContainerModal>
             )
           }

@@ -5,4 +5,5 @@ export type Data ={
   address: string,
   nationality: string,
   uuid: string
+  birth: string
 }
