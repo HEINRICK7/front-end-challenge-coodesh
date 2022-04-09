@@ -66,6 +66,12 @@ export const Main = styled.div`
     padding: 0 50px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow-y: scroll;
+
+    @media only screen and (max-width: 800px) {
+      
+      width: 100%;
+      
+    }
 `
 export const ContainerModal = styled.div`
     display: flex;
