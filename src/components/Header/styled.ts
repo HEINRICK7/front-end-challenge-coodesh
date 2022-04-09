@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 128px;
+    justify-content: center;
     border: 0;
     border-bottom: 1px solid #116FA8;
+    padding: 20px;
 `
 export const Logo = styled.div`
     display: flex;

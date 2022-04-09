@@ -15,14 +15,6 @@ const Header: React.FC = () => {
               <img src={Logo} alt="logo" />
               <C.LogoName>Pharma</C.LogoName>
           </C.Logo>
-          <C.Ul>
-              <C.Li>Home</C.Li>
-              <C.Li>Serviços</C.Li>
-              <C.Li>Sobre</C.Li>
-              <C.Li>
-                  <C.Button onClick={() => { history('/list_users')}}>ENTRAR</C.Button>
-              </C.Li>
-          </C.Ul>
       </C.Container>
       </>
   );
