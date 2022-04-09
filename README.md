@@ -6,13 +6,14 @@
 [Link](https://front-end-challenge-coodesh.vercel.app/)
 
 
-## ⚙️ Funcionalidades
+## Requisitos
 
   - [x] `Estudar a documentação da REST API`.
   - [x] `Utilizar React.js ou Vue.js ou Angular 8+ para construir a solução do Challenge`.
   - [x] `Utilizar Frameworks CSS ou estilo proprio, recomendamos alguns como`
  - [x] `Trabalhar em um repositório em seu usuário ou utilizar o seu github pessoal (não esqueça de colocar no readme a referência a este challenge);`
  ---
+ ## ⚙️ Funcionalidades
 - [x] `Lista de Pacientes` → A tela inicial do projeto será um lista de pacientes que deverá conter um buscador para facilitar filtrar todos os que são exibidos na lista, proposta:
 - [ ] `Estado Global` → O resultado da API deve ser armazenado em um estado global. (Pode ser utilizado Redux, Context, Vuex ou tecnologia equivalente do framework utilizado)
 - [x] `Limitar cada requisição da página em  50 resultados para não sobrecarregar a API.`
@@ -32,7 +33,7 @@
 ### 🎨 Layout
 O layout da aplicação está disponível no Figma:
 
-[Figma](https://www.figma.com/file/9NzDDNrc8TzHRRJ5up8bmw/space-tourism-website?node-id=0%3A1)
+[Figma](https://www.figma.com/file/ptDaweoItLmKfO3nUFMFI7/Untitled?node-id=0%3A1)
 
 ---
 ### Responsivo
@@ -56,15 +57,14 @@ O layout da aplicação está disponível no Figma:
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([ReactJs](https://reactjs.org/))
+#### **Website** <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 
--   **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
--   **[React Icons](https://react-icons.github.io/react-icons/)**
--   **[Axios](https://github.com/axios/axios)**
--   **[swiper](https://swiperjs.com)**
--   **[Antd](https://ant.design/)**
--   **[styled-components](https://styled-components.com/)**
--    **[Figma](https://www.figma.com/community)**
+<img align="center" alt="typescript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+
+<img align="center" alt="styled" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+
+<img align="center" alt="styled" src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+
 
 ## 💪 Como contribuir para o projeto
 
