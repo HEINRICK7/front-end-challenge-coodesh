@@ -1,7 +1,8 @@
 import React from 'react';
-
+import 'antd/dist/antd.min.css'
 import * as C from './styled';
-import Image from '../../assets/image.svg'
+
+import img from '../../assets/image.png'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
                     </C.Description>
                 </C.SectionLeft>
                 <C.Sectionright>
-                    <img src={Image} alt="doctor" />
+                    <img src={img} alt="doctor" />
                 </C.Sectionright>
             </C.Main>
             <Footer/>
