@@ -15,7 +15,7 @@
  ---
  ## ⚙️ Funcionalidades
 - [x] `Lista de Pacientes` → A tela inicial do projeto será um lista de pacientes que deverá conter um buscador para facilitar filtrar todos os que são exibidos na lista, proposta:
-- [ ] `Estado Global` → O resultado da API deve ser armazenado em um estado global. (Pode ser utilizado Redux, Context, Vuex ou tecnologia equivalente do framework utilizado)
+- [x] `Estado Global` → O resultado da API deve ser armazenado em um estado global. (Pode ser utilizado Redux, Context, Vuex ou tecnologia equivalente do framework utilizado)
 - [x] `Limitar cada requisição da página em  50 resultados para não sobrecarregar a API.`
 - [x] `Adicionar o parâmetro de paginação para controlar o Loading more`
 - [x] `Visualizar paciente` → Na coluna de ações da tabela, existe o botão visualizar para expandir os dados dos pacientes. Seguir o modelo proposto
@@ -28,7 +28,7 @@
 - [x] Configurar o buscador para poder filtrar por nome e nacionalidade;
 - [ ] Adicionar o paginador rota para facilitar compartilhar o link e manter a posição na lista;
 - [ ] Escrever Unit Tests ou E2E Test na Lista de Pacientes. Escolher a melhor abordagem e biblioteca;
-- [ ] Configurar Docker no Projeto para facilitar o Deploy da equipe de DevOps;
+- [x] Configurar Docker no Projeto para facilitar o Deploy da equipe de DevOps;
 ---
 ### 🎨 Layout
 O layout da aplicação está disponível no Figma:
