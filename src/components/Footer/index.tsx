@@ -1,14 +1,24 @@
 import React from 'react';
-
-import { Container } from './styled';
+import * as C from './styled';
+import Logo from '../../assets/logoFooter.svg'
 
 const Footer: React.FC = () => {
   return (
-      <Container>
-          <h1>Hello Footer</h1>
-      </Container>
-      
-  );
+  <>
+    <C.Container>
+    <C.Logo>
+      <img src={Logo} alt="logo" />
+      <C.LogoName>Pharma</C.LogoName>
+    </C.Logo>
+    <ul>
+        <li>About Us</li>
+        <li>Sustainability</li>
+        <li>Terms of Service</li>
+        <li>Privacy</li>
+      </ul>
+    </C.Container>
+  </>
+);
 }
 
 export default Footer;

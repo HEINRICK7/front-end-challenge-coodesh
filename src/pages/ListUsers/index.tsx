@@ -1,14 +1,13 @@
-import React,{useState, useEffect} from 'react';
-import { AxiosResponse } from 'axios';
+import React,{useState, useContext} from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-
-import { Table, Skeleton, Button, Modal, Space, Avatar } from 'antd';
-
-import api from '../../services/api'
+import 'antd/dist/antd.min.css'
+import { Table, Skeleton, Button, Modal, Space, Avatar } from 'antd'
 
 import { Users } from '../../types/users'
 import { Data } from '../../types/data'
+
+import {GlobalStateContext}  from '../../GlobalContext/GlobalStateContext'
 
 import * as C from './styled';
 
@@ -17,21 +16,13 @@ import * as Icon from './styled'
 import moment from 'moment';
 
 const ListUsers: React.FC = () => {
+  const {patients, loading} = useContext(GlobalStateContext)
 
-  const [ patients, setPatients ] = useState<Users[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [ModalDetails, setModalDetais] = useState<Users[]>([]);
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [ModalDetails, setModalDetais] = useState<Users[]>([])
 
-  
-  useEffect(()=> {
-    api.get('/?results=5000').then((response: AxiosResponse) => {
-        setPatients(response.data.results);
-        setLoading(true)
-        console.log(response.data.results);
-    });
-  },[])
-  moment.locale('pt-br');
+  moment.locale('pt-br')
+
   const data = patients.map((res) => {
     return ({
       name: `${res.name.first} ${res.name.last}`,
@@ -128,10 +119,9 @@ const ListUsers: React.FC = () => {
   };
   const onClickGoToUserDatails = (id:string) => {
     showModal()
-    patients.filter((res) => res.login.uuid === id).map(res=> {
+    patients.filter((res) => res.login.uuid === id).map(res=> (
       setModalDetais([res])
-      console.log(res)
-    })
+    ))
 };
 
   return (

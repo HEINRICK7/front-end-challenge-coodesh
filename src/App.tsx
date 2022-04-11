@@ -1,15 +1,17 @@
 import React from 'react';
 import * as C from './GlobalStyled'
 import RoutesAdd from './routes'
-import 'antd/dist/antd.css';
+
+import GlobalState from './GlobalContext/GlobalState';
 
 function App() {
   return (
     <>
+    <GlobalState>
       <C.GlobalStyled />
       <RoutesAdd />
-          
-      </>
+    </GlobalState>
+    </>
     
   );
 }
