@@ -4,7 +4,7 @@ export const GlobalStyled = createGlobalStyle`
     * {
         background-image:#FFFFFF;
         ::-webkit-scrollbar{
-      width: 1px;
+      width: 8px;
     }
 
     ::-webkit-scrollbar-thumb{

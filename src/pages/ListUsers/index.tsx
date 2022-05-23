@@ -1,7 +1,7 @@
 import React,{useState, useContext} from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import 'antd/dist/antd.min.css'
+import 'antd/dist/antd.css';
 import { Table, Skeleton, Button, Modal, Space, Avatar } from 'antd'
 
 import { Users } from '../../types/users'
@@ -45,8 +45,10 @@ const ListUsers: React.FC = () => {
           return ({
             text: `${res.name.first}`,
             value: `${res.name.first}`,
-          })}),
-      onFilter: (value: string, record: Data) => record.name.startsWith(value),
+          })
+      }),
+      onFilter: (value: string, record: Data) => {
+        return record.name.startsWith(value)},
       filterSearch: true,
       width: '30%',
     },

@@ -13,7 +13,7 @@ const GlobalState = ({children}:GlobalcontextProps) => {
     
     useEffect(() => {
         
-        api.get('/?results=5000')
+        api.get('/?results=100')
             .then(response => {
                 setPatients(response.data.results);
                 setLoading(true)

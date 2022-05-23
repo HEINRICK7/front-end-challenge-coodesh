@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 
+import styled from 'styled-components';
 import {Contacts, FactCheck, LocationOn} from '@styled-icons/material'
 import { Whatsapp} from '@styled-icons/simple-icons'
 import {Email, Phone, Cake, Map,LocationCity} from '@styled-icons/material-outlined'
